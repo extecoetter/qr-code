@@ -1,21 +1,21 @@
 const EXERCISES = {
   supino: {
-    title: 'Supino Máquina',
+    title: 'Peck Deck',
     subtitle: 'Peito, tríceps e ombros anteriores.',
-    video: 'videos/supino.mp4',
+    video: 'videos/peck-deck.mp4',
     poster: 'img/poster-padrao.png',
-    muscles: ['Peitoral maior', 'Tríceps', 'Deltoide anterior'],
+    muscles: ['Peitoral'],
     tips: [
       'Mantenha os pés firmes no chão.',
-      'Empurre de forma controlada, sem travar os cotovelos.',
-      'Desça o movimento com controle.'
+      'Empurre de forma controlada, com movimentos cadenciados.',
+      'Mantenhaos braços alinhados ao peitoral.'
     ],
     errors: [
-      'Levantar o quadril do banco.',
+      'Tirar as escápulas do banco.',
       'Fazer o movimento rápido demais.',
       'Abrir os cotovelos em excesso.'
     ],
-    warning: 'Use uma carga compatível com seu nível. Em caso de dor ou desconforto, pare o exercício e procure um instrutor.'
+    warning: 'Use uma carga compatível com seu nível. Em caso de duvida, pare o exercício e procure um instrutor.'
   },
   legpress: {
     title: 'Leg Press 45°',
