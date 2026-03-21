@@ -8,13 +8,14 @@ const academyConfig = {
 
 const exercises = {
   supino: {
-    title: 'Supino Máquina',
-    subtitle: 'Execução guiada para peitoral, ombros e tríceps.',
-    video: 'videos/supino.mp4',
-    muscles: ['Peitoral', 'Tríceps', 'Deltoide anterior'],
+    title: 'Peck Deck',
+    subtitle: 'Execução guiada para peitoral.',
+    video: 'videos/peck-deck.mp4',
+    muscles: ['Peitoral'],
     tips: [
       'Mantenha as escápulas apoiadas no banco.',
-      'Empurre de forma controlada, sem travar o cotovelo.',
+      'Empurre de forma controlada, faça o movimento cadenciado.',
+      'Ajuste a pegada. alinhada ao peitoral.',
       'Respire e mantenha o abdômen firme durante o movimento.'
     ],
     errors: [
@@ -22,7 +23,7 @@ const exercises = {
       'Tirar os pés do apoio ou desalinhar o tronco.',
       'Abrir demais os cotovelos.'
     ],
-    warning: 'Ajuste carga e banco antes de iniciar. Em caso de dor, pare e procure orientação profissional.'
+    warning: 'Ajuste carga e banco antes de iniciar. Em caso de duvida, pare e procure orientação profissional.'
   },
   legpress: {
     title: 'Leg Press',
