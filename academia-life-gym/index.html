@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Academia Life Gym - Exercícios</title>
+  <meta name="description" content="Guia rápido de exercícios por QR Code.">
+  <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+  <header class="topbar fade-up">
+    <div class="brand-wrap">
+      <div class="logo">LOGO</div>
+
+      <div class="brand-info">
+        <div class="academy-badge">Academia</div>
+        <p>Escaneie o QR Code do aparelho e veja como executar o exercício.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card fade-up fade-delay-1">
+      <span class="tag">Treino Guiado</span>
+      <h2 id="exerciseTitle">Carregando exercício...</h2>
+      <p id="exerciseSubtitle" class="subtitle">Aguarde um instante.</p>
+    </section>
+
+    <section class="player card fade-up fade-delay-2">
+      <div class="video-wrap">
+        <video id="exerciseVideo" controls playsinline preload="metadata" poster="img/poster-padrao.png">
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+      <div class="player-actions">
+        <button id="replayBtn" class="btn btn-primary" type="button">Assistir novamente</button>
+      </div>
+    </section>
+
+    <section class="details-grid fade-up fade-delay-3">
+      <article class="card">
+        <h3>Músculos trabalhados</h3>
+        <ul id="musclesList" class="list"></ul>
+      </article>
+
+      <article class="card">
+        <h3>Dicas de execução</h3>
+        <ul id="tipsList" class="list"></ul>
+      </article>
+
+      <article class="card">
+        <h3>Erros comuns</h3>
+        <ul id="errorsList" class="list"></ul>
+      </article>
+
+      <article class="card warning-card">
+        <h3>Atenção</h3>
+        <p id="warningText"></p>
+      </article>
+    </section>
+
+    <section class="card exercises-list-card fade-up fade-delay-4">
+      <div class="section-head">
+        <h3>Exercícios cadastrados</h3>
+        <p>Use estes links para testar e gerar os QR Codes.</p>
+      </div>
+      <div id="exerciseLinks" class="exercise-links"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Em caso de dúvidas, procure um instrutor.</p>
+  </footer>
+
+  <script src="js/app.js?v=1"></script>
+</body>
+</html>
