@@ -1,7 +1,7 @@
 const EXERCISES = {
   supino: {
     title: 'Peck Deck',
-    subtitle: 'Peito, tríceps e ombros anteriores.',
+    subtitle: 'Peitoral.',
     video: 'videos/peck-deck.mp4',
     poster: 'img/poster-padrao.png',
     muscles: ['Peitoral'],
