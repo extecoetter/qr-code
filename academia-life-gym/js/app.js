@@ -125,7 +125,9 @@ function renderExerciseLinks(){
 function applyAcademyInfo(){
   if (academyBadge) academyBadge.textContent = academyConfig.category;
   if (brandInfoText) brandInfoText.textContent = academyConfig.intro;
-  if (logoEl) logoEl.textContent = academyConfig.name;
+ if (logoEl && logoEl.tagName === 'IMG') {
+  logoEl.src = 'img/logo.png';
+  logoEl.alt = academyConfig.name;
 }
 
 replayBtn?.addEventListener('click', () => {
