@@ -22,9 +22,9 @@ body{
   min-height:100vh;
   font-family:Arial, Helvetica, sans-serif;
   background:
-    radial-gradient(circle at top right, rgba(250,255,0,.18), transparent 26%),
-    radial-gradient(circle at left center, rgba(230,255,0,.12), transparent 24%),
-    linear-gradient(180deg,#1a0033 0%, #2b0050 46%, #140028 100%);
+    radial-gradient(circle at top right, rgba(180,0,255,.25), transparent 26%),
+    radial-gradient(circle at left center, rgba(140,0,255,.18), transparent 24%),
+    linear-gradient(180deg,#2a0066 0%, #4b00b5 46%, #2a0066 100%);
   color:var(--text);
 }
 
