@@ -6,10 +6,13 @@
   --line:rgba(255,255,255,.09);
   --text:#f8fafc;
   --muted:#d8cde3;
-  --brand:#facc15;
-  --brand-strong:#eab308;
-  --brand-soft:#fde68a;
-  --brand-deep:#ca8a04;
+
+  /* 🔥 LARANJA */
+  --brand:#f97316;
+  --brand-strong:#ea580c;
+  --brand-soft:#fdba74;
+  --brand-deep:#c2410c;
+
   --danger:#ef4444;
   --radius:22px;
   --shadow:0 18px 40px rgba(0,0,0,.28);
@@ -22,8 +25,8 @@ body{
   min-height:100vh;
   font-family:Arial, Helvetica, sans-serif;
   background:
-    radial-gradient(circle at top right, rgba(250,204,21,.18), transparent 26%),
-    radial-gradient(circle at left center, rgba(234,179,8,.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(249,115,22,.18), transparent 26%),
+    radial-gradient(circle at left center, rgba(234,88,12,.12), transparent 24%),
     linear-gradient(180deg,#0b1022 0%, #15162f 46%, #0f172a 100%);
   color:var(--text);
 }
@@ -44,7 +47,7 @@ body::after{
 body::before{
   top:70px;
   right:30px;
-  background:rgba(250,204,21,.7);
+  background:rgba(249,115,22,.7);
 }
 body::after{
   left:-60px;
@@ -86,7 +89,7 @@ body::after{
   font-size:34px;
   letter-spacing:.02em;
   box-shadow:
-    0 10px 28px rgba(250,204,21,.28),
+    0 10px 28px rgba(249,115,22,.28),
     inset 0 1px 0 rgba(255,255,255,.32);
   border:1px solid rgba(255,255,255,.16);
   flex:0 0 auto;
@@ -96,7 +99,7 @@ body::after{
 .logo:hover{
   transform:translateY(-2px) scale(1.02);
   box-shadow:
-    0 14px 34px rgba(250,204,21,.36),
+    0 14px 34px rgba(249,115,22,.36),
     inset 0 1px 0 rgba(255,255,255,.38);
 }
 
@@ -119,19 +122,13 @@ body::after{
   color:#000;
   font-size:15px;
   font-weight:800;
-  box-shadow:0 10px 24px rgba(250,204,21,.25);
+  box-shadow:0 10px 24px rgba(249,115,22,.25);
   border:1px solid rgba(255,255,255,.18);
   transition:transform .25s ease, box-shadow .25s ease;
 }
 .academy-badge:hover{
   transform:translateY(-1px) scale(1.02);
-  box-shadow:0 14px 28px rgba(250,204,21,.34);
-}
-.brand-info p{
-  margin:0;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.45;
+  box-shadow:0 14px 28px rgba(249,115,22,.34);
 }
 
 .container{
@@ -148,202 +145,23 @@ body::after{
   backdrop-filter: blur(12px);
 }
 
-.hero{
-  padding:24px;
-  margin-bottom:18px;
-  position:relative;
-  overflow:hidden;
-}
 .hero::after{
-  content:"";
-  position:absolute;
-  right:-30px;
-  top:-30px;
-  width:150px;
-  height:150px;
-  border-radius:999px;
-  background:radial-gradient(circle, rgba(253,230,138,.24), transparent 70%);
-  pointer-events:none;
+  background:radial-gradient(circle, rgba(253,186,116,.24), transparent 70%);
 }
 
 .tag{
-  display:inline-block;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:#000;
-  background:linear-gradient(135deg,var(--brand-soft),var(--brand-strong));
-  padding:7px 12px;
-  border-radius:999px;
-  box-shadow:0 8px 18px rgba(250,204,21,.2);
+  box-shadow:0 8px 18px rgba(249,115,22,.2);
 }
 
-.hero h2{
-  font-size:32px;
-  line-height:1.08;
-  margin:14px 0 8px;
-}
-.subtitle{
-  margin:0;
-  color:var(--muted);
-  font-size:16px;
-}
-
-.player{
-  padding:16px;
-  margin-bottom:18px;
-}
-.video-wrap{
-  border-radius:18px;
-  overflow:hidden;
-  background:#000;
-  border:1px solid rgba(255,255,255,.08);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.03);
-}
-video{
-  display:block;
-  width:100%;
-  height:auto;
-  max-height:70vh;
-  background:#000;
-}
-.player-actions{
-  padding-top:14px;
-}
-
-.btn{
-  border:0;
-  border-radius:16px;
-  padding:14px 20px;
-  font-size:16px;
-  font-weight:800;
-  cursor:pointer;
-  transition:transform .22s ease, box-shadow .22s ease, opacity .22s ease;
-}
-.btn:hover{
-  transform:translateY(-1px);
-}
-.btn:active{
-  transform:translateY(0);
-}
 .btn-primary{
-  background:linear-gradient(135deg,var(--brand-soft),var(--brand-strong));
-  color:#000;
-  box-shadow:0 10px 22px rgba(250,204,21,.22);
-}
-.btn-primary:hover{
-  background:linear-gradient(135deg,var(--brand-strong),var(--brand-deep));
-  color:#000;
-  box-shadow:0 14px 28px rgba(250,204,21,.3);
+  box-shadow:0 10px 22px rgba(249,115,22,.22);
 }
 
-.details-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px;
-  margin-bottom:18px;
+.btn-primary:hover{
+  box-shadow:0 14px 28px rgba(249,115,22,.3);
 }
-.details-grid .card{
-  padding:18px;
-  transition:transform .24s ease, border-color .24s ease, box-shadow .24s ease;
-}
+
 .details-grid .card:hover,
 .exercise-link:hover{
-  transform:translateY(-3px);
-  border-color:rgba(253,230,138,.24);
-  box-shadow:0 18px 30px rgba(0,0,0,.22);
-}
-.card h3{
-  margin:0 0 12px;
-  font-size:20px;
-}
-.list{
-  margin:0;
-  padding-left:18px;
-  color:var(--muted);
-}
-.list li{
-  margin-bottom:8px;
-  line-height:1.5;
-}
-.warning-card{
-  background:linear-gradient(180deg, rgba(127,29,29,.82), rgba(69,10,10,.82));
-}
-.warning-card p{
-  margin:0;
-  color:#fee2e2;
-  line-height:1.55;
-}
-
-.exercises-list-card{padding:18px}
-.section-head h3{margin:0 0 6px}
-.section-head p{margin:0 0 16px;color:var(--muted)}
-.exercise-links{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px;
-}
-.exercise-link{
-  display:block;
-  text-decoration:none;
-  background:var(--card-2);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:16px;
-  padding:14px;
-  color:var(--text);
-  transition:transform .24s ease, border-color .24s ease, box-shadow .24s ease;
-}
-.exercise-link small{
-  display:block;
-  color:var(--muted);
-  margin-top:6px;
-}
-
-.footer{
-  padding:24px 16px 34px;
-  text-align:center;
-  color:var(--muted);
-}
-
-.empty{
-  color:var(--muted);
-  font-style:italic;
-}
-
-.fade-up{
-  opacity:0;
-  transform:translateY(18px);
-  animation:fadeUp .7s ease forwards;
-}
-.fade-delay-1{animation-delay:.05s}
-.fade-delay-2{animation-delay:.14s}
-.fade-delay-3{animation-delay:.23s}
-.fade-delay-4{animation-delay:.32s}
-
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@media (max-width: 760px){
-  .brand-wrap{
-    align-items:flex-start;
-    gap:12px;
-  }
-  .logo{
-    width:90px;
-    height:90px;
-    font-size:28px;
-    border-radius:18px;
-  }
-  .academy-badge{
-    font-size:14px;
-    padding:9px 13px;
-  }
-  .hero h2{font-size:25px}
-  .details-grid,
-  .exercise-links{grid-template-columns:1fr}
+  border-color:rgba(253,186,116,.24);
 }
