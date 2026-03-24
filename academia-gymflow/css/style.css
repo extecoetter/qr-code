@@ -6,10 +6,10 @@
   --line:rgba(255,255,255,.09);
   --text:#f8fafc;
   --muted:#d8cde3;
-  --brand:#f97316;
-  --brand-strong:#ea580c;
-  --brand-soft:#fdba74;
-  --brand-deep:#c2410c;
+  --brand:#ff6a00;
+  --brand-strong:#ff4500;
+  --brand-soft:#ff9a3c;
+  --brand-deep:#cc3700;
   --danger:#ef4444;
   --radius:22px;
   --shadow:0 18px 40px rgba(0,0,0,.28);
@@ -22,8 +22,8 @@ body{
   min-height:100vh;
   font-family:Arial, Helvetica, sans-serif;
   background:
-    radial-gradient(circle at top right, rgba(249,115,22,.18), transparent 26%),
-    radial-gradient(circle at left center, rgba(234,88,12,.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(255,106,0,.18), transparent 26%),
+    radial-gradient(circle at left center, rgba(255,106,02,.12), transparent 24%),
     linear-gradient(180deg,#0b1022 0%, #15162f 46%, #0f172a 100%);
   color:var(--text);
 }
@@ -44,7 +44,7 @@ body::after{
 body::before{
   top:70px;
   right:30px;
-  background:rgba(249,115,22,.7);
+  background:rgba(255,106,0,.7);
 }
 body::after{
   left:-60px;
@@ -86,7 +86,7 @@ body::after{
   font-size:34px;
   letter-spacing:.02em;
   box-shadow:
-    0 10px 28px rgba(249,115,22,.28),
+    0 10px 28px rgba(255,106,0,.28),
     inset 0 1px 0 rgba(255,255,255,.32);
   border:1px solid rgba(255,255,255,.16);
   flex:0 0 auto;
@@ -96,7 +96,7 @@ body::after{
 .logo:hover{
   transform:translateY(-2px) scale(1.02);
   box-shadow:
-    0 14px 34px rgba(249,115,22,.36),
+    0 14px 34px rgba(255,106,0,.36),
     inset 0 1px 0 rgba(255,255,255,.38);
 }
 
@@ -119,13 +119,13 @@ body::after{
   color:#000;
   font-size:15px;
   font-weight:800;
-  box-shadow:0 10px 24px rgba(249,115,22,.25);
+  box-shadow:0 10px 24px rgba(255,106,0,.25);
   border:1px solid rgba(255,255,255,.18);
   transition:transform .25s ease, box-shadow .25s ease;
 }
 .academy-badge:hover{
   transform:translateY(-1px) scale(1.02);
-  box-shadow:0 14px 28px rgba(249,115,22,.34);
+  box-shadow:0 14px 28px rgba(255,106,0,.34);
 }
 .brand-info p{
   margin:0;
@@ -162,7 +162,7 @@ body::after{
   width:150px;
   height:150px;
   border-radius:999px;
-  background:radial-gradient(circle, rgba(253,186,116,.24), transparent 70%);
+  background:radial-gradient(circle, rgba(255,106,03,.24), transparent 70%);
   pointer-events:none;
 }
 
@@ -176,7 +176,7 @@ body::after{
   background:linear-gradient(135deg,var(--brand-soft),var(--brand-strong));
   padding:7px 12px;
   border-radius:999px;
-  box-shadow:0 8px 18px rgba(249,115,22,.2);
+  box-shadow:0 8px 18px rgba(255,106,0,.2);
 }
 
 .hero h2{
@@ -230,12 +230,12 @@ video{
 .btn-primary{
   background:linear-gradient(135deg,var(--brand-soft),var(--brand-strong));
   color:#000;
-  box-shadow:0 10px 22px rgba(249,115,22,.22);
+  box-shadow:0 10px 22px rgba(255,106,0,.22);
 }
 .btn-primary:hover{
   background:linear-gradient(135deg,var(--brand-strong),var(--brand-deep));
   color:#000;
-  box-shadow:0 14px 28px rgba(249,115,22,.3);
+  box-shadow:0 14px 28px rgba(255,106,0,.3);
 }
 
 .details-grid{
@@ -251,7 +251,7 @@ video{
 .details-grid .card:hover,
 .exercise-link:hover{
   transform:translateY(-3px);
-  border-color:rgba(253,186,116,.24);
+  border-color:rgba(255,106,03,.24);
   box-shadow:0 18px 30px rgba(0,0,0,.22);
 }
 .card h3{
