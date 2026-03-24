@@ -75,8 +75,8 @@ body::after{
 }
 
 .logo{
-  width:160px !important;
-  height:120px !important;
+  width:180px !important;
+  height:100px !important;
   border-radius:20px;
   display:grid;
   place-items:center;
