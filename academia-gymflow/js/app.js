@@ -1,137 +1,143 @@
-const academyConfig = {
-  name: 'Academia GymFlow',
-  category: 'Academia modelo',
-  intro: 'Escaneie o QR Code do aparelho e veja como executar o exercício.',
-  defaultExercise: 'supino',
-  basePathHint: 'Use os links com ?ex=nome-do-exercicio'
-};
-
-const exercises = {
+const EXERCISES = {
   supino: {
-    title: 'Supino Máquina',
-    subtitle: 'Execução guiada para peitoral, ombros e tríceps.',
-    video: 'videos/supino.mp4',
-    muscles: ['Peitoral', 'Tríceps', 'Deltoide anterior'],
+    title: 'Peck Deck',
+    subtitle: 'Peitoral.',
+    video: 'videos/peck-deck.mp4',
+    poster: 'img/poster-padrao.png',
+    muscles: ['Peitoral'],
     tips: [
-      'Mantenha as escápulas apoiadas no banco.',
-      'Empurre de forma controlada, sem travar o cotovelo.',
-      'Respire e mantenha o abdômen firme durante o movimento.'
+      'Mantenha os pés firmes no chão.',
+      'Empurre de forma controlada, com movimentos cadenciados.',
+      'Mantenhaos braços alinhados ao peitoral.'
     ],
     errors: [
-      'Soltar o peso muito rápido na volta.',
-      'Tirar os pés do apoio ou desalinhar o tronco.',
-      'Abrir demais os cotovelos.'
+      'Tirar as escápulas do banco.',
+      'Fazer o movimento rápido demais.',
+      'Abrir os cotovelos em excesso.'
     ],
-    warning: 'Ajuste carga e banco antes de iniciar. Em caso de dor, pare e procure orientação profissional.'
+    warning: 'Use uma carga compatível com seu nível. Em caso de duvida, pare o exercício e procure um instrutor.'
   },
   legpress: {
-    title: 'Leg Press',
-    subtitle: 'Foco em quadríceps, glúteos e posteriores.',
+    title: 'Leg Press 45°',
+    subtitle: 'Quadríceps, glúteos e posteriores.',
     video: 'videos/legpress.mp4',
-    muscles: ['Quadríceps', 'Glúteos', 'Posteriores de coxa'],
+    poster: 'img/poster-padrao.png',
+    muscles: ['Quadríceps', 'Glúteos', 'Posteriores da coxa'],
     tips: [
-      'Posicione bem os pés na plataforma.',
-      'Desça controlando o movimento.',
-      'Mantenha a lombar apoiada no encosto.'
+      'Apoie a lombar no encosto.',
+      'Empurre pela planta dos pés.',
+      'Desça até a amplitude segura para você.'
     ],
     errors: [
-      'Descolar a lombar do banco.',
-      'Descer além do seu limite com perda de postura.',
-      'Travar totalmente os joelhos na subida.'
+      'Tirar a lombar do banco.',
+      'Fechar muito os joelhos.',
+      'Descer mais do que sua mobilidade permite.'
     ],
-    warning: 'Use apenas a carga que permite execução controlada e segura.'
+    warning: 'Nunca solte a trava sem estar posicionado corretamente. Procure orientação antes de aumentar a carga.'
   },
   puxada: {
     title: 'Puxada Frontal',
-    subtitle: 'Execução guiada para costas e bíceps.',
+    subtitle: 'Costas e bíceps.',
     video: 'videos/puxada.mp4',
-    muscles: ['Dorsal', 'Bíceps', 'Romboides'],
+    poster: 'img/poster-padrao.png',
+    muscles: ['Latíssimo do dorso', 'Bíceps', 'Redondo maior'],
     tips: [
-      'Puxe em direção ao peito alto.',
-      'Mantenha o tronco firme e sem embalo.',
-      'Retorne devagar à posição inicial.'
+      'Mantenha o peito aberto.',
+      'Puxe a barra em direção à parte alta do peito.',
+      'Retorne devagar, controlando a subida.'
     ],
     errors: [
       'Puxar atrás da nuca.',
-      'Usar excesso de balanço do corpo.',
-      'Encolher demais os ombros.'
+      'Balançar o tronco para roubar no movimento.',
+      'Subir a barra de uma vez.'
     ],
-    warning: 'Ajuste o banco e o apoio antes de começar para manter a postura correta.'
+    warning: 'Evite compensações com a lombar. Se estiver começando, peça ajuste de carga a um instrutor.'
+  },
+  nenem: {
+    title: 'Arremesso de Nena',
+    subtitle: 'Costas e bíceps.',
+    video: 'videos/nenem.mp4',
+    poster: 'img/poster-padrao.png',
+    muscles: ['Latíssimo do dorso', 'Bíceps', 'Redondo maior'],
+    tips: [
+      'mantenha as maos firmes.',
+      'nao deixe o nenem cair.',
+      'nao jogue muito alto.'
+    ],
+    errors: [
+      'derrubar o nenem no chao.',
+      'Balançar o tronco para roubar no movimento.',
+      'machucar o nenem.'
+    ],
+    warning: 'Evite compensações com a lombar. Se estiver começando, peça ajuda a um instrutor.'
   }
 };
 
-const titleEl = document.getElementById('exerciseTitle');
-const subtitleEl = document.getElementById('exerciseSubtitle');
-const videoEl = document.getElementById('exerciseVideo');
-const musclesList = document.getElementById('musclesList');
-const tipsList = document.getElementById('tipsList');
-const errorsList = document.getElementById('errorsList');
-const warningText = document.getElementById('warningText');
-const exerciseLinks = document.getElementById('exerciseLinks');
-const replayBtn = document.getElementById('replayBtn');
-const academyBadge = document.querySelector('.academy-badge');
-const brandInfoText = document.querySelector('.brand-info p');
-const logoEl = document.querySelector('.logo');
-
-function getExerciseKey(){
-  const params = new URLSearchParams(window.location.search);
-  const key = params.get('ex');
-  return exercises[key] ? key : academyConfig.defaultExercise;
+function qs(selector) {
+  return document.querySelector(selector);
 }
 
-function fillList(element, items){
-  element.innerHTML = '';
-  if(!items || !items.length){
-    element.innerHTML = '<li class="empty">Nada cadastrado.</li>';
+function getExerciseKey() {
+  const params = new URLSearchParams(window.location.search);
+  return (params.get('ex') || 'supino').toLowerCase().trim();
+}
+
+function setList(selector, items) {
+  const el = qs(selector);
+  el.innerHTML = '';
+
+  if (!items || !items.length) {
+    el.innerHTML = '<li class="empty">Sem informações cadastradas.</li>';
     return;
   }
+
   items.forEach(item => {
     const li = document.createElement('li');
     li.textContent = item;
-    element.appendChild(li);
+    el.appendChild(li);
   });
 }
 
-function renderExercise(key){
-  const item = exercises[key];
-  if(!item) return;
+function renderExerciseLinks() {
+  const box = qs('#exerciseLinks');
+  box.innerHTML = '';
 
-  document.title = `${academyConfig.name} - ${item.title}`;
-  titleEl.textContent = item.title;
-  subtitleEl.textContent = item.subtitle;
-  videoEl.src = item.video;
-  videoEl.load();
-  warningText.textContent = item.warning || '';
-
-  fillList(musclesList, item.muscles);
-  fillList(tipsList, item.tips);
-  fillList(errorsList, item.errors);
-}
-
-function renderExerciseLinks(){
-  const baseUrl = `${window.location.origin}${window.location.pathname}`;
-  exerciseLinks.innerHTML = '';
-
-  Object.entries(exercises).forEach(([key, item]) => {
+  Object.entries(EXERCISES).forEach(([key, item]) => {
     const a = document.createElement('a');
     a.className = 'exercise-link';
-    a.href = `${baseUrl}?ex=${encodeURIComponent(key)}`;
-    a.innerHTML = `<strong>${item.title}</strong><small>${a.href}</small>`;
-    exerciseLinks.appendChild(a);
+    a.href = `?ex=${encodeURIComponent(key)}`;
+    a.innerHTML = `<strong>${item.title}</strong><small>${window.location.origin}${window.location.pathname}?ex=${key}</small>`;
+    box.appendChild(a);
   });
 }
 
-function applyAcademyInfo(){
-  if (academyBadge) academyBadge.textContent = academyConfig.category;
-  if (brandInfoText) brandInfoText.textContent = academyConfig.intro;
-  if (logoEl) logoEl.textContent = academyConfig.name;
+function renderExercise() {
+  const key = getExerciseKey();
+  const item = EXERCISES[key] || EXERCISES.supino;
+
+  qs('#exerciseTitle').textContent = item.title;
+  qs('#exerciseSubtitle').textContent = item.subtitle;
+
+  const video = qs('#exerciseVideo');
+  video.src = item.video;
+  video.setAttribute('poster', item.poster || '');
+  video.load();
+
+  qs('#warningText').textContent = item.warning || 'Procure um instrutor em caso de dúvidas.';
+
+  setList('#musclesList', item.muscles);
+  setList('#tipsList', item.tips);
+  setList('#errorsList', item.errors);
 }
 
-replayBtn?.addEventListener('click', () => {
-  videoEl.currentTime = 0;
-  videoEl.play();
-});
+function bindEvents() {
+  qs('#replayBtn').addEventListener('click', () => {
+    const video = qs('#exerciseVideo');
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  });
+}
 
-applyAcademyInfo();
+renderExercise();
 renderExerciseLinks();
-renderExercise(getExerciseKey());
+bindEvents();
