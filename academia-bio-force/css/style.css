@@ -1,15 +1,15 @@
 :root{
   --bg:#0f172a;
   --bg-2:#1e1b4b;
-  --card:rgba(90,0,120,.78);
-  --card-2:rgba(110,0,150,.95);
+  --card:rgba(17,24,39,.78);
+  --card-2:rgba(31,41,55,.95);
   --line:rgba(255,255,255,.09);
   --text:#f8fafc;
   --muted:#d8cde3;
-  --brand:#68b08a;
-  --brand-strong:#4f9e78;
-  --brand-soft:#8ccfb0;
-  --brand-deep:#3b7f61;
+  --brand:#b6ff00;
+  --brand-strong:#9cff00;
+  --brand-soft:#dfff7a;
+  --brand-deep:#73d600;
   --danger:#ef4444;
   --radius:22px;
   --shadow:0 18px 40px rgba(0,0,0,.28);
@@ -22,8 +22,8 @@ body{
   min-height:100vh;
   font-family:Arial, Helvetica, sans-serif;
   background:
-    radial-gradient(circle at top right, rgba(104,176,138,.18), transparent 26%),
-    radial-gradient(circle at left center, rgba(104,176,1382,.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(182,255,0,.18), transparent 26%),
+    radial-gradient(circle at left center, rgba(182,255,02,.12), transparent 24%),
     linear-gradient(180deg,#0b1022 0%, #15162f 46%, #0f172a 100%);
   color:var(--text);
 }
@@ -44,7 +44,7 @@ body::after{
 body::before{
   top:70px;
   right:30px;
-  background:rgba(104,176,138,.7);
+  background:rgba(182,255,0,.7);
 }
 body::after{
   left:-60px;
@@ -81,17 +81,17 @@ body::after{
   display:grid;
   place-items:center;
   background:transparent;
-  color:#000;
+  color:#6a00ff;
   font-weight:900;
   font-size:34px;
   letter-spacing:.02em;
 
-  border:1px solid rgba(104,176,138,.9);
+  border:1px solid rgba(182,255,0,.9);
 
   box-shadow:
-    0 0 0 1px rgba(104,176,138,.4),
-    0 0 12px rgba(104,176,138,.6),
-    0 0 28px rgba(104,176,138,.4),
+    0 0 0 1px rgba(182,255,0,.4),
+    0 0 12px rgba(182,255,0,.6),
+    0 0 28px rgba(182,255,0,.4),
     inset 0 1px 0 rgba(255,255,255,.25);
 
   flex:0 0 auto;
@@ -101,7 +101,7 @@ body::after{
 .logo:hover{
   transform:translateY(-2px) scale(1.02);
   box-shadow:
-    0 14px 34px rgba(104,176,138,.36),
+    0 14px 34px rgba(182,255,0,.36),
     inset 0 1px 0 rgba(255,255,255,.38);
 }
 
@@ -121,16 +121,16 @@ body::after{
   padding:10px 16px;
   border-radius:999px;
   background:linear-gradient(135deg,var(--brand-soft),var(--brand-strong));
-  color:#000;
+  color:#6a00ff;
   font-size:15px;
   font-weight:800;
-  box-shadow:0 10px 24px rgba(104,176,138,.25);
+  box-shadow:0 10px 24px rgba(182,255,0,.25);
   border:1px solid rgba(255,255,255,.18);
   transition:transform .25s ease, box-shadow .25s ease;
 }
 .academy-badge:hover{
   transform:translateY(-1px) scale(1.02);
-  box-shadow:0 14px 28px rgba(104,176,138,.34);
+  box-shadow:0 14px 28px rgba(182,255,0,.34);
 }
 .brand-info p{
   margin:0;
@@ -167,7 +167,7 @@ body::after{
   width:150px;
   height:150px;
   border-radius:999px;
-  background:radial-gradient(circle, rgba(104,176,1383,.24), transparent 70%);
+  background:radial-gradient(circle, rgba(182,255,03,.24), transparent 70%);
   pointer-events:none;
 }
 
@@ -177,11 +177,11 @@ body::after{
   font-weight:800;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:#000;
+  color:#6a00ff;
   background:linear-gradient(135deg,var(--brand-soft),var(--brand-strong));
   padding:7px 12px;
   border-radius:999px;
-  box-shadow:0 8px 18px rgba(104,176,138,.2);
+  box-shadow:0 8px 18px rgba(182,255,0,.2);
 }
 
 .hero h2{
@@ -233,16 +233,14 @@ video{
   transform:translateY(0);
 }
 .btn-primary{
-  color:#6a00ff;
   background:linear-gradient(135deg,var(--brand-soft),var(--brand-strong));
-  color:#000;
-  box-shadow:0 10px 22px rgba(104,176,138,.22);
+  color:#6a00ff;
+  box-shadow:0 10px 22px rgba(182,255,0,.22);
 }
 .btn-primary:hover{
-  color:#6a00ff;
   background:linear-gradient(135deg,var(--brand-strong),var(--brand-deep));
-  color:#000;
-  box-shadow:0 14px 28px rgba(104,176,138,.3);
+  color:#6a00ff;
+  box-shadow:0 14px 28px rgba(182,255,0,.3);
 }
 
 .details-grid{
@@ -258,7 +256,7 @@ video{
 .details-grid .card:hover,
 .exercise-link:hover{
   transform:translateY(-3px);
-  border-color:rgba(104,176,1383,.24);
+  border-color:rgba(182,255,03,.24);
   box-shadow:0 18px 30px rgba(0,0,0,.22);
 }
 .card h3{
